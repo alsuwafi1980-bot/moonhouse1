@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moon House Beauty Salon - Luxury & Professional Beauty Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #1a1a1a;
+            color: #d1d5db;
+        }
+        .header-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://placehold.co/1920x1080/282828/f0f0f0?text=Luxury+Salon+Interior');
+            background-position: center;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        .lang-switch-btn {
+            background-color: #4a5568;
+            color: #e2e8f0;
+            transition: all 0.3s ease;
+        }
+        .lang-switch-btn:hover {
+            background-color: #2d3748;
+        }
+        .text-silver {
+            color: #c0c0c0;
+        }
+        .bg-silver {
+            background-color: #c0c0c0;
+        }
+        .btn-silver {
+            background-color: #c0c0c0;
+            color: #1a1a1a;
+            transition: all 0.3s ease;
+        }
+        .btn-silver:hover {
+            background-color: #a0a0a0;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .whatsapp-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 100;
+        }
+        .service-card {
+            background-color: #2d3748;
+            transition: all 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200">
+
+    <!-- Language Switcher -->
+    <div class="fixed top-4 right-4 z-50">
+        <button id="lang-toggle" class="lang-switch-btn px-4 py-2 rounded-full font-semibold shadow-lg">عربي</button>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-40 bg-gray-900/80 backdrop-blur-md shadow-md">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-xl font-bold text-silver">Moon House Beauty</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="hover:text-silver transition-colors duration-300"><span class="lang-en">Home</span><span class="lang-ar hidden">الرئيسية</span></a>
+                <a href="#about" class="hover:text-silver transition-colors duration-300"><span class="lang-en">About Us</span><span class="lang-ar hidden">من نحن</span></a>
+                <a href="#services" class="hover:text-silver transition-colors duration-300"><span class="lang-en">Services</span><span class="lang-ar hidden">الخدمات</span></a>
+                <a href="#gallery" class="hover:text-silver transition-colors duration-300"><span class="lang-en">Gallery</span><span class="lang-ar hidden">المعرض</span></a>
+                <a href="#contact" class="hover:text-silver transition-colors duration-300"><span class="lang-en">Contact</span><span class="lang-ar hidden">اتصل بنا</span></a>
+                <a href="#promotions" class="hover:text-silver transition-colors duration-300"><span class="lang-en">Promotions</span><span class="lang-ar hidden">العروض</span></a>
+            </div>
+            <div class="md:hidden">
+                <button id="menu-btn" class="text-white focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900/90 text-center py-4">
+            <a href="#home" class="block py-2 hover:text-silver"><span class="lang-en">Home</span><span class="lang-ar hidden">الرئيسية</span></a>
+            <a href="#about" class="block py-2 hover:text-silver"><span class="lang-en">About Us</span><span class="lang-ar hidden">من نحن</span></a>
+            <a href="#services" class="block py-2 hover:text-silver"><span class="lang-en">Services</span><span class="lang-ar hidden">الخدمات</span></a>
+            <a href="#gallery" class="block py-2 hover:text-silver"><span class="lang-en">Gallery</span><span class="lang-ar hidden">المعرض</span></a>
+            <a href="#contact" class="block py-2 hover:text-silver"><span class="lang-en">Contact</span><span class="lang-ar hidden">اتصل بنا</span></a>
+            <a href="#promotions" class="block py-2 hover:text-silver"><span class="lang-en">Promotions</span><span class="lang-ar hidden">العروض</span></a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="header-bg flex items-center justify-center min-h-screen text-center p-8">
+            <div class="max-w-4xl space-y-6">
+                <h1 class="text-6xl md:text-8xl font-bold text-white tracking-wide leading-tight"><span class="lang-en">Moon House Beauty</span><span class="lang-ar hidden">بيت القمر للتجميل</span></h1>
+                <p class="text-xl md:text-2xl text-gray-300 font-light leading-relaxed"><span class="lang-en">Where Elegance Meets Excellence</span><span class="lang-ar hidden">حيث تلتقي الأناقة بالتميز</span></p>
+                <a href="#booking" class="btn-silver inline-block px-10 py-4 rounded-full font-semibold uppercase tracking-wider text-lg shadow-xl"><span class="lang-en">Book Now</span><span class="lang-ar hidden">احجز الآن</span></a>
+                <div class="mt-8 flex justify-center space-x-4">
+                    <a href="#services" class="text-gray-300 hover:text-silver transition-colors duration-300"><span class="lang-en">Services</span><span class="lang-ar hidden">الخدمات</span></a>
+                    <a href="#contact" class="text-gray-300 hover:text-silver transition-colors duration-300"><span class="lang-en">Contact</span><span class="lang-ar hidden">اتصل بنا</span></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="py-20 px-8">
+            <div class="container mx-auto max-w-5xl text-center space-y-8">
+                <h2 class="text-5xl font-bold text-silver"><span class="lang-en">Our Story</span><span class="lang-ar hidden">قصتنا</span></h2>
+                <p class="text-lg leading-relaxed max-w-3xl mx-auto"><span class="lang-en">Founded on a passion for beauty and a commitment to excellence, Moon House Beauty is a sanctuary of luxury in the heart of Muscat. Located in the exclusive Al Qurm - Al Sarooj area, our salon offers a serene escape where clients can indulge in bespoke beauty treatments performed by seasoned professionals. We believe in elevating your glow with expert care and creating a trusting, luxurious experience every time you visit.</span><span class="lang-ar hidden">تأسس بيت القمر للتجميل على شغف بالجمال والتزام بالتميز، وهو ملاذ فاخر في قلب مسقط. يقع صالوننا في منطقة القرم - الساروج الحصرية، ويوفر ملاذًا هادئًا حيث يمكن للعملاء الاستمتاع بعلاجات تجميل مصممة خصيصًا لهم على أيدي محترفين متمرسين. نحن نؤمن بزيادة جمالك بفضل رعاية الخبراء وخلق تجربة فاخرة مليئة بالثقة في كل مرة تزورنا.</span></p>
+                <!-- Placeholder for Team Introduction -->
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-20 px-8 bg-gray-800">
+            <div class="container mx-auto">
+                <h2 class="text-5xl font-bold text-center text-silver mb-12"><span class="lang-en">Our Services</span><span class="lang-ar hidden">خدماتنا</span></h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Hair Services -->
+                    <div class="service-card p-8 rounded-lg shadow-lg">
+                        <h3 class="text-3xl font-semibold mb-4 text-silver"><span class="lang-en">Hair</span><span class="lang-ar hidden">الشعر</span></h3>
+                        <ul class="space-y-4">
+                            <li class="flex justify-between items-center text-lg"><span class="lang-en">Cut & Style</span><span class="lang-ar hidden">قص وتصفيف</span><span class="font-bold text-silver">OMR 15+</span></li>
+                            <li class="flex justify-between items-center text-lg"><span class="lang-en">Coloring</span><span class="lang-ar hidden">التلوين</span><span class="font-bold text-silver">OMR 30+</span></li>
+                            <li class="flex justify-between items-center text-lg"><span class="lang-en">Treatments</span><span class="lang-ar hidden">العلاجات</span><span class="font-bold text-silver">OMR 25+</span></li>
+                        </ul>
+                    </div>
+                    <!-- Nails Services -->
+                    <div class="service-card p-8 rounded-lg shadow-lg">
+                        <h3 class="text-3xl font-semibold mb-4 text-silver"><span class="lang-en">Nails</span><span class="lang-ar hidden">الأظافر</span></h3>
+                        <ul class="space-y-4">
+                            <li class="flex justify-between items-center text-lg"><span class="lang-en">Manicure</span><span class="lang-ar hidden">مانيكير</span><span class="font-bold text-silver">OMR 8+</span></li>
+                            <li class="flex justify-between items-center text-lg"><span class="lang-en">Pedicure</span><span class="lang-ar hidden">باديكير</span><span class="font-bold text-silver">OMR 10+</span></li>
+                            <li class="flex justify-between items-center text-lg"><span class="lang-en">Extensions</span><span class="lang-ar hidden">الوصلات</span><span class="font-bold text-silver">OMR 20+</span></li>
+                        </ul>
+                    </div>
+                    <!-- Facial Services -->
+                    <div class="service-card p-8 rounded-lg shadow-lg">
+                        <h3 class="text-3xl font-semibold mb-4 text-silver"><span class="lang-en">Facial</span><span class="lang-ar hidden">الوجه</span></h3>
+                        <ul class="space-y-4">
+                            <li class="flex justify-between items-center text-lg"><span class="lang-en">Deep Cleansing</span><span class="lang-ar hidden">التنظيف العميق</span><span class="font-bold text-silver">OMR 25+</span></li>
+                            <li class="flex justify-between items-center text-lg"><span class="lang-en">HydraFacial</span><span class="lang-ar hidden">هايدرا فيشل</span><span class="font-bold text-silver">OMR 40+</span></li>
+                            <li class="flex justify-between items-center text-lg"><span class="lang-en">Eye Treatment</span><span class="lang-ar hidden">علاج العين</span><span class="font-bold text-silver">OMR 18+</span></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="text-center mt-12">
+                    <a href="https://example.com/pricelist.pdf" target="_blank" class="btn-silver inline-block px-8 py-3 rounded-full font-semibold shadow-xl"><span class="lang-en">Download Full Price List</span><span class="lang-ar hidden">تنزيل قائمة الأسعار كاملة</span></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Booking Section -->
+        <section id="booking" class="py-20 px-8">
+            <div class="container mx-auto max-w-3xl text-center space-y-8">
+                <h2 class="text-5xl font-bold text-silver"><span class="lang-en">Book Your Appointment</span><span class="lang-ar hidden">احجز موعدك</span></h2>
+                <p class="text-lg leading-relaxed"><span class="lang-en">Secure your spot for a luxurious beauty experience. Fill out the form below or contact us directly via WhatsApp for a quick confirmation.</span><span class="lang-ar hidden">احجز مكانك لتجربة تجميل فاخرة. املأ النموذج أدناه أو اتصل بنا مباشرة عبر واتساب لتأكيد سريع.</span></p>
+                <form class="space-y-6 text-left">
+                    <div>
+                        <label for="service" class="block text-sm font-medium mb-2"><span class="lang-en">Select Service</span><span class="lang-ar hidden">اختر الخدمة</span></label>
+                        <select id="service" class="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-silver">
+                            <option value=""><span class="lang-en">Choose a service...</span><span class="lang-ar hidden">اختر خدمة...</span></option>
+                            <option value="hair"><span class="lang-en">Hair</span><span class="lang-ar hidden">شعر</span></option>
+                            <option value="nails"><span class="lang-en">Nails</span><span class="lang-ar hidden">أظافر</span></option>
+                            <option value="facial"><span class="lang-en">Facial</span><span class="lang-ar hidden">وجه</span></option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="staff" class="block text-sm font-medium mb-2"><span class="lang-en">Staff Preference (Optional)</span><span class="lang-ar hidden">تفضيل الموظف (اختياري)</span></label>
+                        <input type="text" id="staff" class="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-silver" placeholder="e.g., Jane Doe">
+                    </div>
+                    <div>
+                        <label for="date" class="block text-sm font-medium mb-2"><span class="lang-en">Date & Time</span><span class="lang-ar hidden">التاريخ والوقت</span></label>
+                        <input type="datetime-local" id="date" class="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-silver">
+                    </div>
+                    <button type="submit" class="w-full btn-silver py-3 rounded-full font-semibold uppercase tracking-wider shadow-xl"><span class="lang-en">Submit Booking</span><span class="lang-ar hidden">إرسال الحجز</span></button>
+                    <div class="text-center text-sm text-gray-400 mt-4"><span class="lang-en">Or book directly via WhatsApp</span><span class="lang-ar hidden">أو احجز مباشرة عبر واتساب</span></div>
+                    <div class="text-center mt-4">
+                        <a href="https://wa.me/96893233012" target="_blank" class="bg-green-500 text-white inline-flex items-center px-8 py-3 rounded-full font-semibold shadow-lg hover:bg-green-600 transition-colors duration-300">
+                            <i class="fab fa-whatsapp text-lg mr-2"></i>
+                            <span><span class="lang-en">WhatsApp Now</span><span class="lang-ar hidden">واتساب الآن</span></span>
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="py-20 px-8 bg-gray-800">
+            <div class="container mx-auto">
+                <h2 class="text-5xl font-bold text-center text-silver mb-12"><span class="lang-en">Gallery</span><span class="lang-ar hidden">المعرض</span></h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <img src="https://placehold.co/600x400/3d3d3d/c0c0c0?text=Client+Transformation+1" alt="Client Transformation 1" class="w-full h-auto rounded-lg shadow-md hover:scale-105 transition-transform duration-300">
+                    <img src="https://placehold.co/600x400/3d3d3d/c0c0c0?text=Salon+Interior+1" alt="Salon Interior 1" class="w-full h-auto rounded-lg shadow-md hover:scale-105 transition-transform duration-300">
+                    <img src="https://placehold.co/600x400/3d3d3d/c0c0c0?text=Nail+Art+Sample" alt="Nail Art Sample" class="w-full h-auto rounded-lg shadow-md hover:scale-105 transition-transform duration-300">
+                    <img src="https://placehold.co/600x400/3d3d3d/c0c0c0?text=Client+Transformation+2" alt="Client Transformation 2" class="w-full h-auto rounded-lg shadow-md hover:scale-105 transition-transform duration-300">
+                    <img src="https://placehold.co/600x400/3d3d3d/c0c0c0?text=Salon+Interior+2" alt="Salon Interior 2" class="w-full h-auto rounded-lg shadow-md hover:scale-105 transition-transform duration-300">
+                    <img src="https://placehold.co/600x400/3d3d3d/c0c0c0?text=Hair+Coloring+Work" alt="Hair Coloring Work" class="w-full h-auto rounded-lg shadow-md hover:scale-105 transition-transform duration-300">
+                </div>
+            </div>
+        </section>
+
+        <!-- Promotions Section -->
+        <section id="promotions" class="py-20 px-8">
+            <div class="container mx-auto max-w-5xl text-center space-y-8">
+                <h2 class="text-5xl font-bold text-silver"><span class="lang-en">Special Promotions</span><span class="lang-ar hidden">العروض الخاصة</span></h2>
+                <div class="bg-gray-800 p-10 rounded-lg shadow-lg">
+                    <h3 class="text-4xl font-semibold mb-4 text-silver"><span class="lang-en">Summer Glow Package</span><span class="lang-ar hidden">باقة التوهج الصيفي</span></h3>
+                    <p class="text-lg leading-relaxed max-w-3xl mx-auto"><span class="lang-en">Get ready for summer with our exclusive package! Includes a refreshing facial, a classic manicure, and a professional blow-dry. Limited time offer!</span><span class="lang-ar hidden">استعدي لفصل الصيف مع باقتنا الحصرية! تشمل جلسة تنظيف للوجه، ومانيكير كلاسيكي، وتصفيف شعر احترافي. عرض لفترة محدودة!</span></p>
+                    <button class="btn-silver mt-6 px-8 py-3 rounded-full font-semibold shadow-xl"><span class="lang-en">Learn More</span><span class="lang-ar hidden">اكتشف المزيد</span></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact & Location Section -->
+        <section id="contact" class="py-20 px-8 bg-gray-800">
+            <div class="container mx-auto max-w-5xl text-center">
+                <h2 class="text-5xl font-bold text-silver mb-12"><span class="lang-en">Contact Us</span><span class="lang-ar hidden">اتصل بنا</span></h2>
+                <div class="flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 md:space-x-8">
+                    <div class="w-full md:w-1/2 space-y-6 text-left">
+                        <div>
+                            <h3 class="text-2xl font-semibold text-silver"><span class="lang-en">Location</span><span class="lang-ar hidden">الموقع</span></h3>
+                            <p class="mt-2 text-lg"><span class="lang-en">Al Qurm - Al Sarooj, Near Opera House, Muscat, Oman</span><span class="lang-ar hidden">القرم - الساروج، بالقرب من دار الأوبرا، مسقط، عمان</span></p>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold text-silver"><span class="lang-en">Contact Details</span><span class="lang-ar hidden">تفاصيل الاتصال</span></h3>
+                            <p class="mt-2 text-lg">
+                                <i class="fas fa-phone mr-2 text-silver"></i>
+                                <span class="lang-en">Phone: +968 93233012</span><span class="lang-ar hidden">الهاتف: 93233012 968+</span>
+                            </p>
+                            <p class="mt-1 text-lg">
+                                <i class="fab fa-whatsapp mr-2 text-silver"></i>
+                                <span class="lang-en">WhatsApp: +968 93233012</span><span class="lang-ar hidden">واتساب: 93233012 968+</span>
+                            </p>
+                            <p class="mt-1 text-lg">
+                                <i class="fas fa-envelope mr-2 text-silver"></i>
+                                <span class="lang-en">Email: info@moonhousebeauty.com</span><span class="lang-ar hidden">البريد الإلكتروني: info@moonhousebeauty.com</span>
+                            </p>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold text-silver"><span class="lang-en">Operating Hours</span><span class="lang-ar hidden">ساعات العمل</span></h3>
+                            <p class="mt-2 text-lg"><span class="lang-en">Daily: 10:00 AM - 9:00 PM</span><span class="lang-ar hidden">يومياً: 10:00 صباحًا - 9:00 مساءً</span></p>
+                        </div>
+                    </div>
+                    <div class="w-full md:w-1/2 rounded-lg overflow-hidden shadow-lg" style="height: 400px;">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3550.817924443907!2d58.4601348!3d23.6124737!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e91ff004b919767%3A0xa9ceb1f799029e1d!2sMoon%20House%20Beauty!5e0!3m2!1sen!2som!4v1695726245234!5m2!1sen!2som"
+                            width="100%"
+                            height="100%"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- WhatsApp Widget -->
+    <a href="https://wa.me/96893233012" class="whatsapp-widget bg-green-500 text-white p-4 rounded-full shadow-lg hover:scale-110 transition-transform duration-300" target="_blank">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 py-8 px-8 border-t border-gray-800 text-center">
+        <div class="container mx-auto space-y-4">
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="text-gray-400 hover:text-silver transition-colors duration-300"><i class="fab fa-instagram text-2xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-silver transition-colors duration-300"><i class="fab fa-facebook-f text-2xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-silver transition-colors duration-300"><i class="fab fa-twitter text-2xl"></i></a>
+            </div>
+            <p class="text-sm text-gray-400">&copy; 2025 Moon House Beauty. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const langToggle = document.getElementById('lang-toggle');
+            const menuBtn = document.getElementById('menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const enElements = document.querySelectorAll('.lang-en');
+            const arElements = document.querySelectorAll('.lang-ar');
+            let isArabic = false;
+
+            // Language Toggle
+            langToggle.addEventListener('click', () => {
+                isArabic = !isArabic;
+                if (isArabic) {
+                    document.documentElement.lang = 'ar';
+                    document.body.dir = 'rtl';
+                    langToggle.textContent = 'English';
+                    enElements.forEach(el => el.classList.add('hidden'));
+                    arElements.forEach(el => el.classList.remove('hidden'));
+                } else {
+                    document.documentElement.lang = 'en';
+                    document.body.dir = 'ltr';
+                    langToggle.textContent = 'عربي';
+                    enElements.forEach(el => el.classList.remove('hidden'));
+                    arElements.forEach(el => el.classList.add('hidden'));
+                }
+            });
+
+            // Mobile Menu Toggle
+            menuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
